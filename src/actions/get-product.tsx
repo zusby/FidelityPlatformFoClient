@@ -1,8 +1,8 @@
 import { Product, ProductIDs } from "../types";
 import { getCategory } from "./get-categories";
-import getColor from "./get-color";
+import { getColor } from "./get-color";
 import getImages from "./get-images";
-import getSize from "./get-size";
+import { getSize } from "./get-size";
 
 const API_BASE_URL = "http://localhost:8080/api/v1/product/";
 const storeID = "shop1";
@@ -22,7 +22,7 @@ const getProductIDs = async (productID: string): Promise<ProductIDs> => {
     return res.json();
 }
 
-const getCategoryProductsIDs = async (categoryID: string): Promise<ProductIDs[]>=> {
+const getCategoryProductsIDs = async (categoryID: string): Promise<ProductIDs[]> => {
     const res = await fetch(API_BASE_URL + `category/${categoryID}/all`)
     return res.json();
 }

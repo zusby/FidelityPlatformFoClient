@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import Container from "./components/ui/container";
-import { Billboard as BillboardType, Product } from "./types";
+import { BillBoard as BillboardType, Product } from "./types";
 import getBillboard from "./actions/get-billboard";
 import Billboard from "./components/Billboard";
 import { getFeaturedProductAllIDs, getProduct } from "./actions/get-product";
 import ProductList from "./components/products-list";
 
 export default function HomePage() {
-  const [products, setProducts] = useState<Product[]>([]); 
+  const [products, setProducts] = useState<Product[]>([]);
   const [billboard, setbillboard] = useState<BillboardType>();
   const [loading, setLoading] = useState(false);
 
@@ -30,11 +30,11 @@ export default function HomePage() {
       } catch (error) {
         console.error("Error fetching products:", error);
       } finally {
-        setLoading(false); 
+        setLoading(false);
       }
     };
     fetchData();
-  }, []); 
+  }, []);
 
   if (!loading) {
     if (billboard)
