@@ -28,7 +28,7 @@ const ProductPage = () => {
 
             try {
                 const productsData = await getCategoryProductsIDs(productIDs?.categoryID ? productIDs.categoryID : "");
-                const productPromises = productsData.map(async (product) => getProduct(await product));
+                const productPromises = productsData.map(async (product) => getProduct(product));
                 const productResults = await Promise.all(productPromises);
 
                 setProducts(productResults);

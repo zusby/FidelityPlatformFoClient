@@ -34,7 +34,10 @@ const router = createBrowserRouter([
     path: "category/:categoryID",
     element: (
       <Layout>
-        <CategoryPage />
+        <CategoryPage searchParams={{
+          colorID: '',
+          sizeID: ''
+        }} />
       </Layout>),
   }
 ]);

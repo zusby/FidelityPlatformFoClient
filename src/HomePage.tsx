@@ -7,7 +7,7 @@ import { getFeaturedProductAllIDs, getProduct } from "./actions/get-product";
 import ProductList from "./components/products-list";
 
 export default function HomePage() {
-  const [products, setProducts] = useState<Product[]>([]); // Inizializza products come un array vuoto
+  const [products, setProducts] = useState<Product[]>([]); 
   const [billboard, setbillboard] = useState<BillboardType>();
   const [loading, setLoading] = useState(false);
 
@@ -30,11 +30,11 @@ export default function HomePage() {
       } catch (error) {
         console.error("Error fetching products:", error);
       } finally {
-        setLoading(false); // Imposta loading su false dopo aver completato il fetch
+        setLoading(false); 
       }
     };
     fetchData();
-  }, []); // Assicurati di passare un array vuoto come dipendenza per chiamare fetchData solo una volta
+  }, []); 
 
   if (!loading) {
     if (billboard)

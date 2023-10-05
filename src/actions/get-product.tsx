@@ -22,7 +22,7 @@ const getProductIDs = async (productID: string): Promise<ProductIDs> => {
     return res.json();
 }
 
-const getCategoryProductsIDs = async (categoryID: string): Promise<Promise<ProductIDs>[]> => {
+const getCategoryProductsIDs = async (categoryID: string): Promise<ProductIDs[]>=> {
     const res = await fetch(API_BASE_URL + `category/${categoryID}/all`)
     return res.json();
 }
