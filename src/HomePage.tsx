@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Container from "./components/ui/container";
-import { BillBoard as BillboardType, Product } from "./types";
+import { Billboard as BillboardType, Product } from "./types";
 import getBillboard from "./actions/get-billboard";
 import Billboard from "./components/Billboard";
 import { getFeaturedProductAllIDs, getProduct } from "./actions/get-product";

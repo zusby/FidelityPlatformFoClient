@@ -1,14 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { RouterProvider, createBrowserRouter } from "react-router-dom"
-
 import './index.css'
-
 import ErrorPage from './Pages/ErrorPage';
 import HomePage from './HomePage';
 import Layout from './Layout';
 import ProductPage from './Pages/product';
 import CategoryPage from './Pages/category';
+import CartPage from './Pages/cart';
 
 
 
@@ -34,10 +33,14 @@ const router = createBrowserRouter([
     path: "category/:categoryID",
     element: (
       <Layout>
-        <CategoryPage searchParams={{
-          colorID: '',
-          sizeID: ''
-        }} />
+        <CategoryPage />
+      </Layout>),
+  },
+  {
+    path: "cart",
+    element: (
+      <Layout>
+        <CartPage />
       </Layout>),
   }
 ]);
