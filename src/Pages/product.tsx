@@ -6,6 +6,7 @@ import Container from "@/components/ui/container";
 import { Product, ProductIDs } from "@/types";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
+import Loading from "./loading";
 
 
 
@@ -35,7 +36,7 @@ const ProductPage = () => {
             } catch (error) {
                 console.error("Error fetching products:", error);
             } finally {
-                setLoading(false); // Imposta loading su false dopo aver completato il fetch
+                setLoading(false);
             }
         };
 
@@ -45,8 +46,11 @@ const ProductPage = () => {
         setLoading(false);
     }, [params.productID, productIDs?.categoryID]);
 
+    if (loading) {
+        return <Loading />
+    }
 
-    if (!loading && productData)
+    if (productData)
         return (
             <div className="bg-white">
                 <Container>

@@ -5,6 +5,7 @@ import getBillboard from "./actions/get-billboard";
 import Billboard from "./components/Billboard";
 import { getFeaturedProductAllIDs, getProduct } from "./actions/get-product";
 import ProductList from "./components/products-list";
+import Loading from "./Pages/loading";
 
 export default function HomePage() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -36,18 +37,21 @@ export default function HomePage() {
     fetchData();
   }, []);
 
-  if (!loading) {
-    if (billboard)
-      return (
-        <Container>
-          <div className="space-y-10 pb-10">
-            <Billboard data={billboard} />
-
-            <div className="flex flex-col gap-y-8 px-4 sm:px-6 lg:px-8">
-              <ProductList title="Featured products" items={products} />
-            </div>
-          </div>
-        </Container>
-      )
+  if (loading) {
+    return <Loading />
   }
+
+  if (billboard)
+    return (
+      <Container>
+        <div className="space-y-10 pb-10">
+          <Billboard data={billboard} />
+
+          <div className="flex flex-col gap-y-8 px-4 sm:px-6 lg:px-8">
+            <ProductList title="Featured products" items={products} />
+          </div>
+        </div>
+      </Container>
+    )
+
 }

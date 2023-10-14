@@ -15,11 +15,13 @@ const Summary = () => {
 
     useEffect(() => {
         if (searchParams.get("success")) {
-            toast.success("Payment completed succesfully!")
+            toast.success("Payment completed succesfully!", { id: "success" })
             removeAll();
+
         }
+
         if (searchParams.get("canceled")) {
-            toast.error("Something went wrong...");
+            toast.error("Something went wrong...", { id: "error" });
         }
 
     }, [searchParams, removeAll])
@@ -46,7 +48,6 @@ const Summary = () => {
             body: JSON.stringify(data),
         }).then(response => response.text())
             .then(sessionUrl => {
-
                 window.location.assign(sessionUrl);
             })
     }

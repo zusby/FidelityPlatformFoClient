@@ -12,6 +12,7 @@ import { Category, Color, Product, Size } from '@/types';
 import { getSizes } from '@/actions/get-size';
 import Filter from './filter';
 import MobileFilter from './mobileFilters';
+import Loading from './loading';
 
 
 const CategoryPage: React.FC = () => {
@@ -93,10 +94,12 @@ const CategoryPage: React.FC = () => {
     }, [selectedFilters, products, searchParams]);
 
 
+    if (loading) {
+        return <Loading />
+    }
 
 
-
-    if (!loading && category && sizes && colors) {
+    if (category && sizes && colors) {
         return (
             <div className="">
                 <Container>
@@ -138,7 +141,6 @@ const CategoryPage: React.FC = () => {
         );
     }
 
-    return <div>Loading...</div>;
 };
 
 export default CategoryPage;

@@ -36,11 +36,18 @@ const ProductCard: React.FC<ProductCard> = ({
     }
 
 
+
+
+
+
     return (
         <div onClick={handleClick} className="bg-white group cursor-pointer rounded-xl border p-3 space-y-4">
-            { }
             <div className="aspect-square rounded-xl bg-gray-100 relative">
-                <img src={data.images[0].url} className="object-cover w-full h-full aspect-square rounded-md" alt="Image" />
+                <img
+                    src={data.images[0].url}
+                    className="object-cover w-full h-full aspect-square rounded-md"
+                    alt="Image"
+                />
                 <div className="opacity-0 group-hover:opacity-100 transition absolute w-full px-6 bottom-5">
                     <div className="flex gap-x-6 justify-center">
                         <IconButton
@@ -49,12 +56,10 @@ const ProductCard: React.FC<ProductCard> = ({
                         <IconButton
                             onClick={onAddToCart}
                             icon={<ShoppingCart className="text-gray-600" />} />
-
                     </div>
 
                 </div>
             </div>
-            {/*descritpion */}
             <div>
                 <p className="font-semibold textx-lg">
                     {data.name}
@@ -63,7 +68,6 @@ const ProductCard: React.FC<ProductCard> = ({
                     {data.category.name}
                 </p>
             </div>
-            {/**price  */}
             <div className="flex items-center justify-between">
                 <Currency value={data.price} />
             </div>
