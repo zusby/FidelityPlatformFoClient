@@ -36,7 +36,6 @@ const CartPage = () => {
                 </div>
 
             </Container>
-            CartPage
         </div>
     )
 }
