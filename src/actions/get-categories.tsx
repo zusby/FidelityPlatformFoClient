@@ -1,17 +1,16 @@
 import { Category } from "@/types"
 
-const shopID = "shop1"
+const shopID = import.meta.env.VITE_STOREID;
 // eslint-disable-next-line react-refresh/only-export-components
-const URL = `http://localhost:8080/api/v1/category/`
+const URL = import.meta.env.VITE_BASE_URL;
 
 const getCategories = async (): Promise<Category[]> => {
-    const res = await fetch(URL + `${shopID}/all`);
-
+    const res = await fetch(URL + `category/${shopID}/all`);
     return res.json();
 }
 
 const getCategory = async (id: string): Promise<Category> => {
-    const res = await fetch(URL + `${id}`);
+    const res = await fetch(URL + `category/${id}`);
     return res.json();
 }
 export { getCategory, getCategories }

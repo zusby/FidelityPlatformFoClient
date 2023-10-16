@@ -11,7 +11,8 @@ The web page is implemented using basic React-Vite-Typescript and [stripe](https
 
 NOT YET IMPLEMENTED
 
-`STOREID` with your store ID
+`VITE_STOREID` with your store ID
+`VITE_BASE_URL` with your URL for API calls
 
 ## Deployment
 

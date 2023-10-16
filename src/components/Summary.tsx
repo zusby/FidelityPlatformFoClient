@@ -8,10 +8,11 @@ import { toast } from "react-hot-toast";
 
 
 const Summary = () => {
-    const storeID = "shop1"
+    const storeID = import.meta.env.VITE_STOREID;
     const items = useCartStore((state) => state.items);
     const [searchParams] = useSearchParams();
     const removeAll = useCartStore((state) => state.removeAll)
+    const baseURL = import.meta.env.BASE_URL;
 
     useEffect(() => {
         if (searchParams.get("success")) {
@@ -40,7 +41,7 @@ const Summary = () => {
             storeID: storeID,
             orderItems: items.map((item) => ({ productID: item.id })),
         }
-        await fetch("http://localhost:8080/api/v1/stripe/create-checkout-session", {
+        await fetch(baseURL + "stripe/create-checkout-session", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

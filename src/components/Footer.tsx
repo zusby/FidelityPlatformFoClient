@@ -11,7 +11,7 @@ const Footer = () => {
             setShop(data);
         }
         getShopData();
-    })
+    }, [])
 
 
     const default_title = "E-commerce"
@@ -20,7 +20,7 @@ const Footer = () => {
     return (
         <footer className="bg-white border-t">
             <div className="max-auto py-10">
-                <p className="text-center text-xs text-black">
+                <span className="text-center text-xs text-black">
                     <p>
                         &copy;2023 Unicam made for educational purpose only
                     </p>
@@ -30,7 +30,7 @@ const Footer = () => {
                     <p>
                         email: {shop?.space.email}
                     </p>
-                </p>
+                </span>
             </div>
         </footer>
     )

@@ -4,8 +4,8 @@ import { getColor } from "./get-color";
 import getImages from "./get-images";
 import { getSize } from "./get-size";
 
-const API_BASE_URL = "http://localhost:8080/api/v1/product/";
-const storeID = "shop1";
+const API_BASE_URL = import.meta.env.VITE_BASE_URL;
+const storeID = import.meta.env.VITE_STOREID;
 
 const getProductAllIDs = async (): Promise<ProductIDs[]> => {
     const res = await fetch(API_BASE_URL + storeID);
@@ -13,17 +13,17 @@ const getProductAllIDs = async (): Promise<ProductIDs[]> => {
 };
 
 const getFeaturedProductAllIDs = async (): Promise<ProductIDs[]> => {
-    const res = await fetch(API_BASE_URL + `${storeID}/featured/all`);
+    const res = await fetch(API_BASE_URL + `product/${storeID}/featured/all`);
     return res.json();
 };
 
 const getProductIDs = async (productID: string): Promise<ProductIDs> => {
-    const res = await fetch(API_BASE_URL + `${productID}`)
+    const res = await fetch(API_BASE_URL + `product/${productID}`)
     return res.json();
 }
 
 const getCategoryProductsIDs = async (categoryID: string): Promise<ProductIDs[]> => {
-    const res = await fetch(API_BASE_URL + `category/${categoryID}/all`)
+    const res = await fetch(API_BASE_URL + `product/category/${categoryID}/all`)
     return res.json();
 }
 
