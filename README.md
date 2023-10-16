@@ -15,8 +15,12 @@ The web page is implemented using basic React-Vite-Typescript and [stripe](https
 
 ## Deployment
 
-To deploy this project run
 
+Clone the repository run
+```bash
+  npm i
+```
+To deploy this project run
 ```bash
   npm run dev
 ```
