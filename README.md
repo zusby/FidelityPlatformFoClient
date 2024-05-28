@@ -1,6 +1,6 @@
-# Fidelity Paltform Front End Client
+# Fidelity Platform Front End Client
 
-Fidelity Paltform client side webpage, it uses [FidelityPlatform](https://github.com/zusby/LoyalityPlatform) as backend retrieve data using [Firebase](https://firebase.google.com/).
+Fidelity Platform client side webpage, it uses [FidelityPlatform](https://github.com/zusby/LoyalityPlatform) as backend retrieve data using [Firebase](https://firebase.google.com/).
 A Store required to and has to be created using the [Admin Dashboard](https://github.com/zusby/FidelityPlatformFO)
 
 ## Documentation
